@@ -7,13 +7,14 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${DATABASE_URL}
-    username: ${DATABASE_USERNAME:}
-    password: ${DATABASE_PASSWORD:}
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
 
 logging:
   level:
-    com.blog: info
+    com.blog: debug
