@@ -4,16 +4,3 @@ services:
     env: Java
     buildCommand: ./mvnw clean package -DskipTests
     startCommand: java -jar target/blog-system-1.0.0.jar
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: blog-db
-          property: connectionString
-      - key: MYSQL_PASSWORD
-        fromDatabase:
-          name: blog-db
-          property: password
-
-databases:
-  - name: blog-db
-    plan: free
