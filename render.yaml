@@ -1,0 +1,7 @@
+{
+  "buildCommand": "./mvnw clean package -DskipTests",
+  "startCommand": "java -jar target/blog-system-1.0.0.jar",
+  "env": {
+    "JAVA_VERSION": "17"
+  }
+}
