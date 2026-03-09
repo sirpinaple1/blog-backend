@@ -6,9 +6,12 @@ spring:
     name: blog-system
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/blog_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false}
-    username: ${DATABASE_USERNAME:root}
-    password: ${DATABASE_PASSWORD:root}
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  sql:
+    init:
+      mode: always
   servlet:
     multipart:
       max-file-size: 10MB
@@ -18,14 +21,6 @@ mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   configuration:
     map-underscore-to-camel-case: true
-  global-config:
-    db-config:
-      id-type: auto
-
-# JWT配置
-jwt:
-  secret: ${JWT_SECRET:blog-system-secret-key-2024}
-  expiration: 86400000
 
 logging:
   level:
