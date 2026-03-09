@@ -5,15 +5,15 @@ spring:
   application:
     name: blog-system
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql.railway.internal:3306/railway?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
-    username: root
-    password: ${MYSQL_ROOT_PASSWORD}
-
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true
+    driver-class-name: org.postgresql.Driver
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME:}
+    password: ${DATABASE_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
 
 logging:
   level:
-    com.blog: debug
+    com.blog: info
