@@ -13,11 +13,6 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-  sql:
-    init:
-      mode: always
-      schema-locations: classpath:schema.sql
-      continue-on-error: false
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
@@ -32,11 +27,6 @@ jwt:
   secret: ${JWT_SECRET:blog-system-secret-key-2024}
   expiration: 86400000
 
-# Swagger配置 (生产环境关闭)
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
-
 logging:
   level:
-    com.blog: info
+    com.blog: debug
