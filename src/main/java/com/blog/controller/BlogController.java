@@ -3,11 +3,11 @@ package com.blog.controller;
 import com.blog.common.Result;
 import com.blog.entity.Blog;
 import com.blog.service.BlogService;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(name = "博客管理")
 @RestController
@@ -17,31 +17,26 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
     
+    @Operation(summary = "获取所有博客")
+    @GetMapping("/list")
+    public Result<List<Blog>> list() {
+        List<Blog> blogs = blogService.list();
+        return Result.success(blogs);
+    }
+    
     @Operation(summary = "分页查询博客")
     @GetMapping("/page")
-    public Result<IPage<Blog>> page(
+    public Result<List<Blog>> page(
             @RequestParam(defaultValue = "1") Integer pageNum,
-            @RequestParam(defaultValue = "10") Integer pageSize,
-            @RequestParam(required = false) String title,
-            @RequestParam(required = false) Long categoryId,
-            @RequestParam(required = false) Integer status) {
-        
-        Blog query = new Blog();
-        query.setTitle(title);
-        query.setCategoryId(categoryId);
-        query.setStatus(status);
-        
-        IPage<Blog> page = blogService.pageBlogs(pageNum, pageSize, query);
-        return Result.success(page);
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+        List<Blog> blogs = blogService.list();
+        return Result.success(blogs);
     }
     
     @Operation(summary = "获取博客详情")
     @GetMapping("/{id}")
     public Result<Blog> detail(@PathVariable Long id) {
         Blog blog = blogService.getBlogDetail(id);
-        if (blog != null) {
-            blogService.updateViews(id);
-        }
         return Result.success(blog);
     }
     

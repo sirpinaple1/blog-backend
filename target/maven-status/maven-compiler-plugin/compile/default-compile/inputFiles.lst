@@ -16,6 +16,7 @@
 /home/dev/.openclaw/workspace/blog-system/backend/src/main/java/com/blog/mapper/CommentMapper.java
 /home/dev/.openclaw/workspace/blog-system/backend/src/main/java/com/blog/service/impl/CategoryServiceImpl.java
 /home/dev/.openclaw/workspace/blog-system/backend/src/main/java/com/blog/mapper/UserMapper.java
+/home/dev/.openclaw/workspace/blog-system/backend/src/main/java/com/blog/config/CorsConfig.java
 /home/dev/.openclaw/workspace/blog-system/backend/src/main/java/com/blog/entity/Blog.java
 /home/dev/.openclaw/workspace/blog-system/backend/src/main/java/com/blog/entity/Tag.java
 /home/dev/.openclaw/workspace/blog-system/backend/src/main/java/com/blog/common/Result.java

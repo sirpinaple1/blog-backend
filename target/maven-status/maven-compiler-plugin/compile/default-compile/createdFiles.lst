@@ -20,6 +20,7 @@ com/blog/service/BlogService.class
 com/blog/service/CategoryService.class
 com/blog/BlogApplication.class
 com/blog/service/TagService.class
+com/blog/config/CorsConfig.class
 com/blog/service/CommentService.class
 com/blog/entity/Category.class
 com/blog/dto/BlogQueryDTO.class
