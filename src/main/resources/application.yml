@@ -5,15 +5,12 @@ spring:
   application:
     name: blog-system
   datasource:
-    url: ${JDBC_DATABASE_URL}
-    username: ${JDBC_DATABASE_USERNAME:}
-    password: ${JDBC_DATABASE_PASSWORD:}
-  sql:
-    init:
-      mode: always
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
 
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/**/*.xml
   configuration:
     map-underscore-to-camel-case: true
 
