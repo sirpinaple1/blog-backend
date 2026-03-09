@@ -25,7 +25,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     @Override
     public Blog saveBlog(Blog blog) {
         if (blog.getUserId() == null) {
-            blog.setUserId(1L); // 默认管理员
+            blog.setUserId(1L);
         }
         this.save(blog);
         return blog;
