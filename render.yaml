@@ -1,6 +1,5 @@
 services:
   - type: web
     name: blog-backend
-    runtime: openjdk
     buildCommand: ./mvnw clean package -DskipTests
     startCommand: java -jar target/blog-system-1.0.0.jar
