@@ -8,7 +8,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://mysql.railway.internal:3306/railway?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
-    password: hbLeyfdQXMZXXxHWGEOYLvTGcwLLvmvce
+    password: ${MYSQL_ROOT_PASSWORD}
 
 mybatis-plus:
   configuration:
